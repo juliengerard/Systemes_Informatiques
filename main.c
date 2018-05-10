@@ -13,6 +13,7 @@
 #include <fcntl.h>
 
 /**** Declaration variable globale******/
+//testgithub
 
 int iter1=0; //compte le nbre de fractales crees
 int iter2=0; // compte le nbre de fractales retiree du buffer1
