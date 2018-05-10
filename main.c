@@ -13,7 +13,7 @@
 #include <fcntl.h>
 
 /**** Declaration variable globale******/
-//testgithub
+//testgithub6789
 
 int iter1=0; //compte le nbre de fractales crees
 int iter2=0; // compte le nbre de fractales retiree du buffer1
@@ -54,11 +54,18 @@ int openFile (char *filename)
 
 
 struct fractal *readLine(char* ligne) {
-  printf("debut readLinelol, %s\n", ligne);
     char name[65];
-    int width, height;
-    double r, c;
-    int a=0;
+    int width, height, x;
+    float r, c;
+    x=sscanf(ligne,"%s %d %d %f %f",name,&width,&height,&r,&c);
+    if((x==5)&&(*name != '#')){
+      struct fractal * fract = NULL;
+      fract = fractal_new(name, width, height, (double)r, (double)c);
+      return fract;
+    }
+    else return NULL;
+}
+    /*int a=0;
 
     struct fractal * fract=NULL;
     int i=0;
@@ -125,7 +132,7 @@ struct fractal *readLine(char* ligne) {
       printf("READLINE : width ==== %d\n",fract->width);
       return fract;
     }
-
+*/
   struct fractal * readFile(int file)
   {
     printf("debut lecture\n");

@@ -10,7 +10,6 @@ struct fractal {
     double c;
     int * tab;
     double moyenne;
-
 };
 
 /*

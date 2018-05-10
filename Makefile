@@ -5,3 +5,6 @@ exec: main.c lib
 
 lib:
 	cd libfractal && $(MAKE)
+
+test:
+	./main input1 fileOout
